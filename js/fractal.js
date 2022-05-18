@@ -64,11 +64,9 @@ window.onload = function() {
                 break
         }
         let mu = i + 1 - Math.log(Math.log(a * a + b * b)) / Math.log(2)
-        if (mu <= 0)
+        if (mu < 0)
             mu = 0
-        else if (mu > max)
-            mu =  11 * max / 12
-        else if (isNaN(mu))
+        else if (mu > max || isNaN(mu))
             mu = 11 * max / 12
         color = pallete[255 - Math.floor((mu) * 255 / max)]
 
